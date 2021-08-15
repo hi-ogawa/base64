@@ -1,0 +1,24 @@
+{
+  "name": "@hiogawa/base64",
+  "version": "1.0.0-alpha.1",
+  "homepage": "https://github.com/hi-ogawa/base64",
+  "scripts": {
+    "clean": "rm -rf build",
+    "tsc": "tsc",
+    "test": "NODE_ENV=test mocha",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "package" : "rm -rf build/package && mkdir -p build/package && cp build/tsc/* package.json README.md build/package",
+    "deploy": "npm run clean && npm run tsc && npm run package && npm publish ./build/package --access public"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.6.1",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3",
+    "prettier": "^2.3.2",
+    "source-map-support": "^0.5.19",
+    "typescript": "^4.3.5"
+  }
+}
